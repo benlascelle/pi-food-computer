@@ -5,15 +5,26 @@ nav:
   - Home: index.md
   - About: about.md
 theme:
-  name: readthedocs
+  name: material
   shortcuts:
     search: 83   # s
+  features:
+    - navigation.path
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - search.share
 
 repo_url: https://github.com/benlascelle/pi-food-computer
 edit_uri: edit/main/docs/
 markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences 
+  - tables
   - toc:
       permalink: true
+
 plugins:
   - search:
       indexing: 'full'
