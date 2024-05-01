@@ -23,7 +23,7 @@ jobs:
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v2
         with:
-          mdbook-version: 'latest'
+          mdbook-version: '0.4.10'
 
       - run: mdbook build
 
@@ -32,7 +32,7 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: book
+          publish_dir: ./book
 
   pages:
     name: GitHub Pages
