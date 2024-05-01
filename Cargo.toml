@@ -1,0 +1,33 @@
+[book]
+title = "mdBook Test"
+description = "Create book from markdown files. Like Gitbook but implemented in Rust"
+authors = ["Benjamin Lascelle"]
+language = "en"
+
+[rust]
+edition = "2024"
+
+[output.html]
+mathjax-support = true
+site-url = "/book/"
+git-repository-url = "https://github.com/benlascelle/selenium-playground/tree/master/book"
+edit-url-template = "https://github.com/benlascelle/selenium-playground/edit/master/book/{path}"
+
+[output.html.playground]
+editable = true
+line-numbers = true
+
+[output.html.code.hidelines]
+python = "~"
+
+[output.html.search]
+limit-results = 20
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 2
+boost-paragraph = 1
+expand = true
+heading-split-level = 2
+
+[output.html.redirect]
+"/format/config.html" = "configuration/index.html"
