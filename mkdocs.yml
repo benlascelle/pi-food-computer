@@ -5,3 +5,11 @@ nav:
   - Home: index.md
   - About: about.md
 theme: readthedocs
+repo_url: https://github.com/benlascelle/pi-food-computer
+edit_uri: edit/master/docs/
+markdown_extensions:
+  - toc:
+      permalink: true
+plugins:
+  - search:
+      indexing: 'full'
