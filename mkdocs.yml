@@ -4,9 +4,13 @@ site_name: Pi Food Computer
 nav:
   - Home: index.md
   - About: about.md
-theme: readthedocs
+theme:
+  name: mkdocs
+  shortcuts:
+    search: 83   # s
+
 repo_url: https://github.com/benlascelle/pi-food-computer
-edit_uri: edit/master/docs/
+edit_uri: edit/main/docs/
 markdown_extensions:
   - toc:
       permalink: true
