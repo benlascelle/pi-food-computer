@@ -1,4 +1,4 @@
-name: github pages2
+name: github pages
 
 on:
   push:
@@ -36,8 +36,9 @@ jobs:
     #         with:
     #           github_token: ${{ secrets.GITHUB_TOKEN }}
     #           publish_dir: .
-    # Build job
-    build:
+    
+    # Package the github pages site        
+    package-site:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
@@ -53,8 +54,8 @@ jobs:
         - name: Upload artifact
           uses: actions/upload-pages-artifact@v2
   
-    # Deployment job
-    deploy:
+    # Deploy the github pages site
+    deploy-site:
       environment:
         name: github-pages
         url: ${{steps.deployment.outputs.page_url}}
