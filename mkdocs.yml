@@ -1,0 +1,6 @@
+# https://www.mkdocs.org/getting-started/
+site_name: Pi Food Computer
+
+nav:
+  - Home: index.md
+  - About: about.md
