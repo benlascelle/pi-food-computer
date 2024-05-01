@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   mkdocs:
-    name: Deploy docs
+    name: Build the docs
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main
@@ -28,6 +28,23 @@ jobs:
           EXTRA_PACKAGES: build-base
           # GITHUB_DOMAIN: github.myenterprise.com
           REQUIREMENTS: ./requirements.txt
+
+  # Package the github pages site        
+  package-site:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v4
+          - name: Setup Pages
+            id: pages
+            uses: actions/configure-pages@v3
+          - name: Build with Jekyll
+            uses: actions/jekyll-build-pages@v1
+            with:
+              source: ./site            # mkdocs builds the site here
+              destination: ./_site      # github pages expects the site here
+          - name: Upload artifact
+            uses: actions/upload-pages-artifact@v2
 
   # Deploy the github pages site
   deploy-site:
